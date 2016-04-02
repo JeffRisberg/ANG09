@@ -1,0 +1,15 @@
+<div class="wheel">
+    wheel goes here
+    {{currentValue}}
+    {{finalValue}}
+    {{getFraction(currentValue, finalValue)}}
+    <div class="progress-box">
+        <div class="percentage-cur">
+            <span class="num">{{ currentValue }}%</span>
+        </div>
+        <div class="progress-bar progress-bar-slider">
+            <input class="progress-slider" type="range" min="0" max="100" ng-model="currentValue">
+            <div class="inner" ng-style="{ width: currentValue + '%' || '0%' }"></div>
+        </div>
+    </div>
+</div>
