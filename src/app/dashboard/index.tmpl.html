@@ -1,13 +1,8 @@
 <h1>Dashboard</h1>
 
-<div class="col-sm-4"
-     slider final-value="100" current-value="45">
-</div>
-
-<div class="col-sm-4"
-     slider final-value="100" current-value="77">
-</div>
-
-<div class="col-sm-4"
-     slider final-value="100" current-value="47">
+<div ng-repeat="m in main.metrics">
+    <div class="col-sm-6"
+         slider metric="m">
+        <h2>{{m.name}}</h2>
+    </div>
 </div>
