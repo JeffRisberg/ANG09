@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('ang09')
-    .directive('gauge', [function () {
+    .directive('slider', [function () {
         return {
             scope: {
                 currentValue: '=',
                 finalValue: '='
             },
-            templateUrl: 'app/main/gauge.tmpl.html',
+            templateUrl: 'app/slider/slider.tmpl.html',
             link: function ($scope, $element, $attrs) {
 
                 $scope.getFraction = function (currentValue, finalValue) {
