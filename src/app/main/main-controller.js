@@ -12,9 +12,9 @@ angular.module('ang09')
         ];
 
         $rootScope.updateMetric = function(metricName, newValue) {
-            $scope.metrics.forEach(function (metric) {
+            $rootScope.metrics.forEach(function (metric) {
                 if (metric.name == metricName) {
-                    metric.value = newValue;
+                    metric.current = newValue;
                 }
             })
         };

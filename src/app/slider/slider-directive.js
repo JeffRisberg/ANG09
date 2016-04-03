@@ -11,11 +11,6 @@ angular.module('ang09')
                 var rootScope = $scope.$root;
                 var metric = $scope.metric;
 
-                //$scope.$watch("metric.current", function(oldValue, newValue) {
-                //    console.log("change");
-                //    rootScope.updateMetric(metric.name, newValue);
-                //});
-
                 $scope.currentChanged = function (newCurrentValue) {
                     console.log("change");
                     rootScope.updateMetric(metric.name, parseInt(newCurrentValue));

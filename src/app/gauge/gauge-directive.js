@@ -29,7 +29,7 @@ angular.module('ang09')
                         .innerRadius(50)
                         .outerRadius(70)
                         .startAngle(0)
-                        .endAngle(2.0 * fraction * Math.PI);
+                        .endAngle(fraction * 2.0 * Math.PI);
 
                     svg.append("path")
                         .attr("class", "arc")
