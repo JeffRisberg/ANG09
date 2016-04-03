@@ -2,7 +2,7 @@
  * Created by Brandon Risberg on 4/2/2016.
  */
 
-descripe('Controller: MainCtrl', function() {
+describe('Controller: MainCtrl', function() {
     // Instantiate a new version of my module before each test
     beforeEach(module('betterworkshw'));
 

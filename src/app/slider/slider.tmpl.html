@@ -5,7 +5,7 @@
             <span class="num">{{metric.current}}</span>
         </div>
         <div class="slider-bar slider-bar-slider">
-            <input class="slider-slider" type="range" min="0" max="100" ng-model="metric.current" ng-change="currentChanged(metric.current)">
+            <input class="slider-slider" type="range" min="0" max="100" ng-model="metric.current">
             <div class="inner" ng-style="{ width: metric.current + '%' || '0%' }"></div>
         </div>
     </div>
@@ -15,7 +15,7 @@
             <span class="num">{{metric.expected}}</span>
         </div>
         <div class="slider-bar slider-bar-slider">
-            <input class="slider-slider" type="range" min="0" max="100" ng-model="metric.expected" ng-change="expectedChanged(metric.expected)">
+            <input class="slider-slider" type="range" min="0" max="100" ng-model="metric.expected">
             <div class="inner" ng-style="{ width: metric.expected + '%' || '0%' }"></div>
         </div>
     </div>

@@ -14,7 +14,6 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'http://cdn.firebase.com/js/client/2.2.2/firebase.js',
             'node_modules/angular/angular.js',
             'src/vendor/angular-ui-router.min.js',
             'src/vendor/angularfire.js',

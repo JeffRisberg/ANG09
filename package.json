@@ -6,11 +6,16 @@
   "scripts": {
     "test": "node ./node_modules/gulp/bin/gulp.js test"
   },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JeffRisberg/ANG09.git"
+  },
   "dependencies": {
     "angular": "1.4.9"
   },
   "devDependencies": {
-    "angular-mocks": "1.3.14",
+    "angular-mocks": "^1.3.14",
     "gulp": "3.8.11",
     "karma": "0.12.31",
     "karma-chrome-launcher": "0.1.3",

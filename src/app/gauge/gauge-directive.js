@@ -9,6 +9,7 @@ angular.module('ang09')
             link: function ($scope, $element, $attrs) {
 
                 var metric = $scope.metric;
+
                 $scope.$watch("metric.current", function () {
                     repaint(metric);
                 });
@@ -21,7 +22,7 @@ angular.module('ang09')
                     var arcInnerFrac = metric.expected / 100.0;
                     var arcOuterFrac = metric.current / 100.0;
                     var progressFrac = metric.current / metric.expected;
-                    var outerColor = "arc_outer_norm"
+                    var outerColor = "arc_outer_norm";
 
                     if (progressFrac < 0.25) {
                         outerColor = "arc_outer_danger"
