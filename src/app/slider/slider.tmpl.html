@@ -12,11 +12,11 @@
 
     <div class="slider-box">
         <div class="slider-cur">
-            <span class="num">{{metric.goal}}</span>
+            <span class="num">{{metric.expected}}</span>
         </div>
         <div class="slider-bar slider-bar-slider">
-            <input class="slider-slider" type="range" min="0" max="100" ng-model="metric.goal">
-            <div class="inner" ng-style="{ width: metric.goal + '%' || '0%' }"></div>
+            <input class="slider-slider" type="range" min="0" max="100" ng-model="metric.expected">
+            <div class="inner" ng-style="{ width: metric.expected + '%' || '0%' }"></div>
         </div>
     </div>
 </div>

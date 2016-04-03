@@ -14,7 +14,7 @@ angular.module('ang09')
                 });
 
                 function repaint(metric) {
-                    var fraction = metric.current / metric.goal;
+                    var fraction = metric.current / metric.expected;
 
                     d3.select($element[0]).selectAll("*").remove();
 

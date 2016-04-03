@@ -5,10 +5,10 @@ angular.module('ang09')
         var main = this;
 
         $rootScope.metrics = [
-            {name: 'Widgets',  goal: 100, current: 25},
-            {name: 'Wombats',  goal: 60, current: 35},
-            {name: 'Woofers',  goal: 90, current: 45},
-            {name: 'Wingnuts', goal: 100, current: 55}
+            {name: 'Widgets',  expected: 100, current: 25},
+            {name: 'Wombats',  expected: 60, current: 35},
+            {name: 'Woofers',  expected: 90, current: 45},
+            {name: 'Wingnuts', expected: 100, current: 55}
         ];
 
         $rootScope.updateMetric = function(metricName, newValue) {
