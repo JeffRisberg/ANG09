@@ -20,15 +20,23 @@ angular.module('ang09')
                 function repaint(metric) {
                     var arcInnerFrac = metric.expected / 100.0;
                     var arcOuterFrac = metric.current / 100.0;
+                    var progressFrac = metric.current / metric.expected;
+                    var outerColor = "arc_outer_norm"
+
+                    if (progressFrac < 0.25) {
+                        outerColor = "arc_outer_danger"
+                    } else if (progressFrac < 0.5) {
+                        outerColor = "arc_outer_warn"
+                    }
 
                     d3.select($element[0]).selectAll("*").remove();
 
                     var svg = d3.select($element[0])
                         .append("svg")
-                        .attr("width", 200)
-                        .attr("height", 200)
+                        .attr("width", 140)
+                        .attr("height", 140)
                         .append("g")
-                        .attr("transform", "translate(100,100)");
+                        .attr("transform", "translate(70,70)");
 
                     var arc_inner = d3.svg.arc()
                         .innerRadius(50)
@@ -49,7 +57,7 @@ angular.module('ang09')
                         .cornerRadius(10);
 
                     svg.append("path")
-                        .attr("class", "arc_outer")
+                        .attr("class", outerColor)
                         .attr("d", arc_outer);
 
                     var circle_center = d3.svg.arc()

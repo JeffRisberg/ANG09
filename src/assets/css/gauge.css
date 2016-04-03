@@ -1,5 +1,13 @@
-.arc_outer {
+.arc_outer_norm {
     fill: #78C000;
+}
+
+.arc_outer_warn {
+    fill: #E8AE25;
+}
+
+.arc_outer_danger {
+    fill: #EB330E;
 }
 
 .arc_inner {
