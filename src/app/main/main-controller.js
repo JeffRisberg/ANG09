@@ -5,9 +5,9 @@ angular.module('ang09')
         var main = this;
 
         main.metrics = [
-            {name: 'Widgets', expected: 100, current: 25},
-            {name: 'Wombats', expected: 60, current: 35},
-            {name: 'Woofers', expected: 90, current: 45},
-            {name: 'Wingnuts', expected: 100, current: 55}
+            {name: 'Widgets', expected: 1.00, current: 0.25},
+            {name: 'Wombats', expected: 0.60, current: 0.35},
+            {name: 'Woofers', expected: 0.90, current: 0.45},
+            {name: 'Wingnuts', expected: 1.00, current: 0.55}
         ];
     });

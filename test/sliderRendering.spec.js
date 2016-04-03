@@ -18,8 +18,8 @@ describe('Slider Directive Rendering', function () {
 
         scope.metric = {
             name: 'Wombats',
-            expected: 100,
-            current: 66
+            expected: 1.00,
+            current: 0.66
         };
         scope.title = 'ANG09';
 
@@ -33,14 +33,14 @@ describe('Slider Directive Rendering', function () {
             '<div class="slider-cur">'
         );
         expect(renderedHTML).toContain(
-            '<span class="num ng-binding">66</span>'
+            '<span class="num ng-binding">0.66</span>'
         );
 
         expect(renderedHTML).toContain(
             '<div class="slider-expected">'
         );
         expect(renderedHTML).toContain(
-            '<span class="num ng-binding">100</span>'
+            '<span class="num ng-binding">1</span>'
         );
     });
 });
