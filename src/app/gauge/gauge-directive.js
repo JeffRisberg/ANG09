@@ -30,7 +30,7 @@ angular.module('ang09')
                         outerColor = "arc_outer_warn"
                     }
 
-                    if (typeof(d3) !== "undefined") {
+                    if (typeof(d3) !== "undefined") { // Make sure d3 library is available
                         d3.select($element[0]).selectAll("*").remove();
 
                         var svg = d3.select($element[0])

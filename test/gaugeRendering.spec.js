@@ -1,3 +1,7 @@
+/**
+ * Created by Brandon Risberg on 4/3/2016.
+ */
+
 describe('Gauge Directive Rendering', function () {
     beforeEach(module('ang09'));
     beforeEach(module('templates'));
@@ -23,7 +27,7 @@ describe('Gauge Directive Rendering', function () {
 
         scope.$digest();
 
-        expect(element.html()).toEqual(
+        expect(element.html().trim()).toEqual(
             '<svg width="140" height="140">' +
             '<g transform="translate(70,70)">' +
             '<path class="arc_inner" d="M0,53A53,53 0 1,1 0,-53A53,53 0 1,1 0,53M0,50A50,50 0 1,0 0,-50A50,50 0 1,0 0,50Z"></path>' +

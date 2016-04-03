@@ -1,3 +1,7 @@
+/**
+ * Created by Brandon Risberg on 4/3/2016.
+ */
+
 describe('Slider Directive Rendering', function () {
     beforeEach(module('ang09'));
     beforeEach(module('templates'));
@@ -23,7 +27,7 @@ describe('Slider Directive Rendering', function () {
 
         scope.$digest();
 
-        var renderedHTML = element.html();
+        var renderedHTML = element.html().trim();
 
         expect(renderedHTML).toContain(
             '<div class="slider-cur">'
