@@ -15,7 +15,7 @@
             <span class="num">{{metric.expected}}</span>
         </div>
         <div class="slider-bar slider-bar-slider">
-            <input class="slider-slider" type="range" min="0" max="100" ng-model="metric.expected">
+            <input class="slider-slider" type="range" min="0" max="100" ng-model="metric.expected" ng-change="expectedChanged(metric.expected)">
             <div class="inner" ng-style="{ width: metric.expected + '%' || '0%' }"></div>
         </div>
     </div>

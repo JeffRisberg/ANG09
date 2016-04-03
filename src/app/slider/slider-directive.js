@@ -12,8 +12,11 @@ angular.module('ang09')
                 var metric = $scope.metric;
 
                 $scope.currentChanged = function (newCurrentValue) {
-                    console.log("change");
-                    rootScope.updateMetric(metric.name, parseInt(newCurrentValue));
+                    rootScope.updateMetricCurrent(metric.name, parseInt(newCurrentValue));
+                };
+
+                $scope.expectedChanged = function (newExpectedValue) {
+                    rootScope.updateMetricExpected(metric.name, parseInt(newExpectedValue));
                 };
             }
         }

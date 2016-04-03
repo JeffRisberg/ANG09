@@ -11,10 +11,18 @@ angular.module('ang09')
             {name: 'Wingnuts', expected: 100, current: 55}
         ];
 
-        $rootScope.updateMetric = function(metricName, newValue) {
+        $rootScope.updateMetricCurrent = function(metricName, newValue) {
             $rootScope.metrics.forEach(function (metric) {
                 if (metric.name == metricName) {
                     metric.current = newValue;
+                }
+            })
+        };
+
+        $rootScope.updateMetricExpected = function(metricName, newValue) {
+            $rootScope.metrics.forEach(function (metric) {
+                if (metric.name == metricName) {
+                    metric.expected = newValue;
                 }
             })
         };
