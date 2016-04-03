@@ -1,6 +1,6 @@
 <!doctype html>
 <html ng-app="ang09">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>ANG09</title>
@@ -9,48 +9,52 @@
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/gauge.css">
 
-  </head>
-  <body ng-controller="MainCtrl as main" ng-class="{loading:loadingView}" class="bg-{{main.currentColor}}">
-    <div class="app-wrap">
-      <header class="navbar-clear nav-wrap" role="banner">
+</head>
+<body ng-controller="MainCtrl as main" ng-class="{loading:loadingView}" class="bg-{{main.currentColor}}">
+<div class="app-wrap">
+    <header class="navbar-clear nav-wrap" role="banner">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a ui-sref="seriesList" class="navbar-brand"><img src="assets/images/logo.png" alt="ang09"/></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a ui-sref="seriesList" class="navbar-brand"><img src="assets/images/logo.png" alt="ang09"/></a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-            </li>
-          </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                </li>
+            </ul>
         </div>
-      </header>
+    </header>
 
-      <div ui-view class="content"></div>
+    <div ui-view class="content"></div>
 
-      <div class="modal"></div>
-    </div>
+    <div class="modal"></div>
+</div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    <script src="vendor/angular-ui-router.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="vendor/angular-ui-router.min.js"></script>
 
-    <script src="app/ang09.js"></script>
-    <script src="app/main/main-controller.js"></script>
-    <script src="app/dashboard/dashboard-controller.js"></script>
-    <script src="app/slider/slider-directive.js"></script>
+<script src="app/ang09.js"></script>
+<script src="app/main/main-controller.js"></script>
+<script src="app/dashboard/dashboard-controller.js"></script>
+<script src="app/slider/slider-directive.js"></script>
+<script src="app/gauge/gauge-directive.js"></script>
 
-    <script>
-      var navMain = angular.element(".navbar-collapse");
-      navMain.on("click", "a", null, function () {
-         navMain.collapse('hide');
-      });
-    </script>
-  </body>
+<script>
+    var navMain = angular.element(".navbar-collapse");
+    navMain.on("click", "a", null, function () {
+        navMain.collapse('hide');
+    });
+</script>
+
+</body>
 </html>
