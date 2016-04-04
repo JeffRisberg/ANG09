@@ -17,10 +17,10 @@ describe('Controller: MainCtrl', function () {
 
     it('should have created the metrics', function () {
         expect(ctrl.metrics).toEqual([
-                {name: 'Widgets', expected: 1.00, current: 0.25},
-                {name: 'Wombats', expected: 0.60, current: 0.35},
-                {name: 'Woofers', expected: 0.90, current: 0.45},
-                {name: 'Wingnuts', expected: 1.00, current: 0.55}]
+                {name: 'Widgets', expected: 1.00, actual: 0.25},
+                {name: 'Wombats', expected: 0.60, actual: 0.35},
+                {name: 'Woofers', expected: 0.90, actual: 0.45},
+                {name: 'Wingnuts', expected: 1.00, actual: 0.55}]
         )
     });
 })
