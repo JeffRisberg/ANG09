@@ -28,13 +28,16 @@ describe('Gauge Directive Rendering', function () {
         scope.$digest();
 
         expect(element.html().trim()).toEqual(
-            '<svg width="180" height="180">' +
-            '<g transform="translate(90,90)">' +
-            '<path class="arc_inner" d="M0,82A82,82 0 1,1 0,-82A82,82 0 1,1 0,82M0,76A76,76 0 1,0 0,-76A76,76 0 1,0 0,76Z"></path>' +
-            '<path class="arc_outer_norm" d="M0,-86.94826047713663A3,3 0 0,1 3.103448275862069,-89.94647635565859A90,90 0 1,1 -74.28141104455096,50.81606018996808A3,3 0 0,1 -73.41284439466959,46.58920774046309L-73.41284439466959,46.58920774046309A3,3 0 0,1 -69.32931697491424,47.4283228439702A84,84 0 1,0 2.896551724137931,-83.95004459861468A3,3 0 0,1 0,-86.94826047713663Z"></path>' +
-            '<path class="circle_center" d="M0,76A76,76 0 1,1 0,-76A76,76 0 1,1 0,76Z"></path>' +
-            '<text font-size="30px" transform="translate(0,-2)" style="text-anchor: middle;">66%</text>' +
-            '<text font-size="20px" font-style="oblique" transform="translate(0,25)" style="text-anchor: middle;">Progress</text>' +
+            '<svg width="140" height="140">' +
+            '<g transform="translate(70,70)">' +
+            '<path class="arc_inner" d="M0,53A53,53 0 1,1 0,-53A53,53 0 1,1 0,53M0,50A50,50 0 1,0 0,-50A50,50 0 1,0 0,50Z"></path>' +
+            '<path class="arc_outer_norm" d="M4.440892098500626e-15,-56.92099788303082A3,3 0 0,1 3.1578947368421098,-59.91683987687455A60,60 0 1,1 -48.897376500154785,34.771346988607014A3,3 0 0,1 -48.059988060084024,30.49979586267062L-48.059988060084024,30.49979586267062A3,3 0 0,1 -44.0076388501393,31.294212289746316A54,54 0 1,0 2.8421052631578987,-53.925155889187096A3,3 0 0,1 4.440892098500626e-15,-56.92099788303082Z"></path>' +
+            '<path class="circle_center" d="M0,43A43,43 0 1,1 0,-43A43,43 0 1,1 0,43Z"></path>' +
+            '<text transform="translate(0,-0)" style="text-anchor: middle;">' +
+            '<tspan font-size="22px">66</tspan>' +
+            '<tspan font-size="14px">%</tspan>' +
+            '</text>' +
+            '<text font-size="12px" transform="translate(0,15)" style="text-anchor: middle;">Progress</text>' +
             '</g>' +
             '</svg>');
     });
