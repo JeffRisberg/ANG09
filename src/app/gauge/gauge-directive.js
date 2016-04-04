@@ -19,7 +19,7 @@ angular.module('ang09')
                 });
 
                 function repaint(metric) {
-                    if (typeof(metric.expected) !== "number") {
+                    if (typeof(metric.expected) !== "number" || metric.expected < 0.0 || metric.expected > 1.0) {
                         // Based on http://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
                         while ($element[0].firstChild) {
                             $element[0].removeChild($element[0].firstChild);
@@ -27,7 +27,7 @@ angular.module('ang09')
                         var errorText = document.createTextNode("Invalid 'Expected' Value");
                         $element[0].appendChild(errorText);
                     }
-                    else if (typeof(metric.current) !== "number") {
+                    else if (typeof(metric.current) !== "number" || metric.current < 0.0 || metric.current > 1.0) {
                         // Based on http://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
                         while ($element[0].firstChild) {
                             $element[0].removeChild($element[0].firstChild);
@@ -53,14 +53,14 @@ angular.module('ang09')
 
                             var svg = d3.select($element[0])
                                 .append("svg")
-                                .attr("width", 180)
-                                .attr("height", 180)
+                                .attr("width", 140)
+                                .attr("height", 140)
                                 .append("g")
-                                .attr("transform", "translate(90,90)");
+                                .attr("transform", "translate(70,70)");
 
                             var arc_inner = d3.svg.arc()
-                                .innerRadius(76)
-                                .outerRadius(82)
+                                .innerRadius(50)
+                                .outerRadius(53)
                                 .startAngle(0)
                                 .endAngle(arcInnerFrac * 2 * Math.PI)
                                 .cornerRadius(10);
@@ -70,8 +70,8 @@ angular.module('ang09')
                                 .attr("d", arc_inner);
 
                             var arc_outer = d3.svg.arc()
-                                .innerRadius(84)
-                                .outerRadius(90)
+                                .innerRadius(54)
+                                .outerRadius(60)
                                 .startAngle(0)
                                 .endAngle(arcOuterFrac * 2 * Math.PI)
                                 .cornerRadius(10);
@@ -82,9 +82,9 @@ angular.module('ang09')
 
                             var circle_center = d3.svg.arc()
                                 .innerRadius(0)
-                                .outerRadius(76)
+                                .outerRadius(43)
                                 .startAngle(0)
-                                .endAngle(2 * Math.PI);
+                                .endAngle(2 * Math.PI)
 
                             svg.append("path")
                                 .attr("class", "circle_center")
@@ -92,16 +92,16 @@ angular.module('ang09')
 
                             svg.append("text")
                                 .style("text-anchor", "middle")
-                                .attr("font-size", "30px")
+                                .attr("font-size", "20px")
                                 .text(progressLabel)
                                 .attr("transform", "translate(0,-2)");
 
                             svg.append("text")
                                 .style("text-anchor", "middle")
-                                .attr("font-size", "20px")
+                                .attr("font-size", "12px")
                                 .attr("font-style", "oblique")
                                 .text("Progress")
-                                .attr("transform", "translate(0,25)");
+                                .attr("transform", "translate(0,15)");
                         }
                     }
                 }

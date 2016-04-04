@@ -72,4 +72,76 @@ describe('Gauge Directive Rendering', function () {
         expect(element.html().trim()).toEqual(
             "Invalid 'Expected' Value");
     });
+
+    it("should validate 'Expected' value greater than or equal to 0.0", function () {
+        var scope = rootScope.$new();
+
+        scope.metric = {
+            name: 'Wombats',
+            current: 0.50,
+            expected: -0.20
+        };
+        scope.title = 'ANG09';
+
+        var element = compile('<gauge metric="metric"/>')(scope);
+
+        scope.$digest();
+
+        expect(element.html().trim()).toEqual(
+            "Invalid 'Expected' Value");
+    });
+
+    it("should validate 'Expected' value less than or equal to 1.0", function () {
+        var scope = rootScope.$new();
+
+        scope.metric = {
+            name: 'Wombats',
+            current: 0.50,
+            expected: 1.20
+        };
+        scope.title = 'ANG09';
+
+        var element = compile('<gauge metric="metric"/>')(scope);
+
+        scope.$digest();
+
+        expect(element.html().trim()).toEqual(
+            "Invalid 'Expected' Value");
+    });
+
+    it("should validate 'Current' value greater than or equal to 0.0", function () {
+        var scope = rootScope.$new();
+
+        scope.metric = {
+            name: 'Wombats',
+            current: -0.20,
+            expected: 0.50
+        };
+        scope.title = 'ANG09';
+
+        var element = compile('<gauge metric="metric"/>')(scope);
+
+        scope.$digest();
+
+        expect(element.html().trim()).toEqual(
+            "Invalid 'Current' Value");
+    });
+
+    it("should validate 'Current' value less than or equal to 1.0", function () {
+        var scope = rootScope.$new();
+
+        scope.metric = {
+            name: 'Wombats',
+            current: 1.2,
+            expected: 0.50
+        };
+        scope.title = 'ANG09';
+
+        var element = compile('<gauge metric="metric"/>')(scope);
+
+        scope.$digest();
+
+        expect(element.html().trim()).toEqual(
+            "Invalid 'Current' Value");
+    });
 });
