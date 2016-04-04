@@ -48,6 +48,32 @@ angular.module('ang09')
                             outerColor = "arc_outer_warn"
                         }
 
+                        // set up animation functions
+                        var drawArc = d3.svg.arc()
+                            .innerRadius(function(d) {
+                                return d.innerRadius;
+                            })
+                            .outerRadius(function(d) {
+                                return d.outerRadius;
+                            })
+                            .startAngle(0)
+                            .endAngle(function(d) {
+                                return d.endAngle;
+                            })
+                            .cornerRadius(10);
+
+                        var arcTween = function(transition, newAngle) {
+                            transition.attrTween("d", function(d) {
+                                var interpolate = d3.interpolate(d.endAngle, newAngle);
+
+                                return function(t) {
+                                    d.endAngle = interpolate(t);
+                                    return drawArc(d);
+                                };
+                            });
+                        }
+
+
                         if (typeof(d3) !== "undefined") { // Make sure d3 library is available
                             d3.select($element[0]).selectAll("*").remove();
 
@@ -58,27 +84,25 @@ angular.module('ang09')
                                 .append("g")
                                 .attr("transform", "translate(70,70)");
 
-                            var arc_inner = d3.svg.arc()
-                                .innerRadius(50)
-                                .outerRadius(53)
-                                .startAngle(0)
-                                .endAngle(arcInnerFrac * 2 * Math.PI)
-                                .cornerRadius(10);
+                            var arc_inner = drawArc({endAngle:0, innerRadius:50, outerRadius:53});
 
                             svg.append("path")
+                                .datum({endAngle:0, innerRadius:50, outerRadius:53})
                                 .attr("class", "arc_inner")
-                                .attr("d", arc_inner);
+                                .attr("d", arc_inner)
+                                .transition()
+                                .duration(3000)
+                                .call(arcTween, (arcOuterFrac * 2 * Math.PI));
 
-                            var arc_outer = d3.svg.arc()
-                                .innerRadius(54)
-                                .outerRadius(60)
-                                .startAngle(0)
-                                .endAngle(arcOuterFrac * 2 * Math.PI)
-                                .cornerRadius(10);
+                            var arc_outer = drawArc({endAngle:0, innerRadius:54, outerRadius:60});
 
                             svg.append("path")
+                                .datum({endAngle:0, innerRadius:54, outerRadius:60})
                                 .attr("class", outerColor)
-                                .attr("d", arc_outer);
+                                .attr("d", arc_outer)
+                                .transition()
+                                .duration(3000)
+                                .call(arcTween, (arcOuterFrac * 2 * Math.PI));
 
                             var circle_center = d3.svg.arc()
                                 .innerRadius(0)
