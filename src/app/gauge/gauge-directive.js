@@ -95,15 +95,16 @@ angular.module('ang09')
                                 .attr("transform", "translate(0,-0)");
 
                             upperText.append("tspan")
-                                .attr("font-size", "22px")
+                                .attr("class", "progress_number")
                                 .text(progressLabel);
 
                             upperText.append("tspan")
-                                .attr("font-size", "14px")
+                                .attr("class", "progress_percent")
                                 .text("%");
 
                             svg.append("text")
                                 .style("text-anchor", "middle")
+                                .attr("class", "progress_label")
                                 .attr("font-size", "12px")
                                 .text("Progress")
                                 .attr("transform", "translate(0,15)");
