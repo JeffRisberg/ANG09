@@ -1,0 +1,10 @@
+<h1>Dashboard</h1>
+
+<div ng-repeat="m in main.metrics">
+
+    <div class="col-sm-6">
+        <h2>{{m.name}}</h2>
+        <gauge metric="m"/>
+        <slider metric="m"/>
+    </div>
+</div>
