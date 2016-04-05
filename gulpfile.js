@@ -20,4 +20,10 @@ gulp.task('tdd', function (done) {
   }, done);
 });
 
+gulp.task('deploy', function() {
+  return gulp.src('./src/**/*')
+      .pipe(ghPages());
+});
+
+
 gulp.task('default', ['test']);
