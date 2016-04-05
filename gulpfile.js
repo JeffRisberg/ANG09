@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var karma = require('karma').server;
+var ghPages = require('gulp-gh-pages');
 
 /**
  * Run test once and exit
