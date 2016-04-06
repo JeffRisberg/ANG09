@@ -13,6 +13,8 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
+            'node_modules/jquery/dist/jquery.js',
+            'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
             'node_modules/angular/angular.js',
             'src/vendor/angular-ui-router.min.js',
             'src/vendor/d3.min.js',
