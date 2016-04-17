@@ -8,6 +8,7 @@ describe('Gauge Directive Rendering', function () {
 
     var compile, mockBackend, rootScope;
 
+    // Helper functions
     function flushAllD3Transitions() {
         var now = Date.now;
         Date.now = function () {
@@ -15,6 +16,30 @@ describe('Gauge Directive Rendering', function () {
         };
         d3.timer.flush();
         Date.now = now;
+    }
+
+    function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+        var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
+
+        return {
+            x: centerX + (radius * Math.cos(angleInRadians)),
+            y: centerY + (radius * Math.sin(angleInRadians))
+        };
+    }
+
+    function describeArc(x, y, radius, startAngle, endAngle){
+
+        var start = polarToCartesian(x, y, radius, endAngle);
+        var end = polarToCartesian(x, y, radius, startAngle);
+
+        var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
+
+        var d = [
+            "M", start.x, start.y,
+            "A", radius, radius, 0, arcSweep, 0, end.x, end.y
+        ].join(" ");
+
+        return d;
     }
 
     beforeEach(inject(function ($compile, $rootScope) {
