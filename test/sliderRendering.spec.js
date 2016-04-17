@@ -29,18 +29,13 @@ describe('Slider Directive Rendering', function () {
 
         var renderedHTML = element.html().trim();
 
-        expect(renderedHTML).toContain(
-            '<div class="slider-actual">'
-        );
-        expect(renderedHTML).toContain(
-            '<span class="num ng-binding">0.66</span>'
-        );
+        expect($('.slider-actual', renderedHTML)).toExist();
+        expect($('.slider-expected', renderedHTML)).toExist();
 
-        expect(renderedHTML).toContain(
-            '<div class="slider-expected">'
-        );
-        expect(renderedHTML).toContain(
-            '<span class="num ng-binding">1</span>'
-        );
+        expect($('.slider-actual span.num', renderedHTML)).toExist();
+        expect($('.slider-expected span.num', renderedHTML)).toExist();
+
+        expect($('.slider-actual span.num', renderedHTML)).toHaveText('0.66');
+        expect($('.slider-expected span.num', renderedHTML)).toHaveText('1');
     });
 });
