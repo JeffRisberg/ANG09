@@ -12,24 +12,18 @@
     "url": "git://github.com/JeffRisberg/ANG09.git"
   },
   "dependencies": {
-    "angular": "1.4.9",
+    "angular": "1.5.7",
     "jquery": "^1.12.3"
   },
   "devDependencies": {
     "angular-mocks": "1.5.0",
-    "grunt": "~0.4.5",
-    "grunt-contrib-concat": "^1.0.0",
-    "grunt-contrib-jasmine": "~1.0.0",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-uglify": "~0.5.0",
-    "grunt-contrib-watch": "^1.0.0",
     "gulp": "3.9.1",
+    "karma": "1.1.1",
     "gulp-gh-pages": "^0.5.4",
-    "karma": "0.13.22",
-    "karma-chrome-launcher": "0.2.3",
-    "karma-jasmine": "0.3.8",
-    "karma-ng-html2js-preprocessor": "0.1.1",
-    "karma-phantomjs-launcher": "1.0.0",
+    "karma-chrome-launcher": "1.0.1",
+    "karma-jasmine": "1.0.2",
+    "karma-ng-html2js-preprocessor": "^1.0.0",
+    "karma-phantomjs-launcher": "1.0.1",
     "karma-coverage": "^0.5.5",
     "jasmine-jquery": "^2.1.1"
   }
